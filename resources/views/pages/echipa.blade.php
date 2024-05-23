@@ -2,7 +2,6 @@
 
 @section('content')
 
-@include('components.echipa-comp')
 
 <x-anonima />
 @endsection

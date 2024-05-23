@@ -1,5 +1,5 @@
 <div class="col col-lg-7">
-
+    @include('pages.modale')
 
     @foreach($entitati as $entitate)
     <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2">
@@ -13,7 +13,7 @@
             <th>Editeaza</th>
             <th>Convoaca</th>
         </thead>
-        </thead>
+
         <?php
         //var_dump($entitate->users)
 
@@ -23,10 +23,14 @@
         <tr>
             <td width='25%'>{{$user->username}}</td>
             <td>
-                <button class='sterge_membru form-control' data-bs-toggle="modal" data-bs-target="#yesNoModal" wire:click='alegeUser({{$user->id}})'>Sterge</button>
+                <button class='btn btn-primay' data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="alegeUser('{{$user->id}}')">Sterge</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch demo modal
+                </button>
+
             </td>
             <td>
-                <button type="button" id="" class="btn btn-primary trimite_email" data-bs-toggle="modal" data-bs-target="#editeazaModal">
+                <button type="button" id="" class="btn btn-primary trimite_email">
                     Editeaza</button>
             </td>
             <td>
@@ -39,6 +43,6 @@
 
     @endforeach
 
-
+    <!-- wire:click = 'alegeUser({{$user->id}})  '-->
     <x-anonima />
 </div>

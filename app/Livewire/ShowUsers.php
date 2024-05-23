@@ -16,17 +16,15 @@ class ShowUsers extends Component
 
     public function alegeUser($id)
     {
-        $this->id =  $id;
+       // dd($id);
+       // $this->id =  $id;
        //dd($this->id);
        // User::find($this->id)->delete();
 
     }
-    public function resetUser(){
-        $this->id="";
-        dd("resetat");
-    }
+   
     public function stergeUser(){
-        dd($this->id);
+       // dd($this->id);
         User::find($this->id)->delete();
     }
 
