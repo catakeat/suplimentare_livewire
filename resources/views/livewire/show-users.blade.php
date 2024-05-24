@@ -1,6 +1,8 @@
 <div class="col col-lg-7">
     @include('pages.modale')
 
+    <input type="password" wire:model.live.150ms="test"> ai scris asta {{$test}}
+
     @foreach($entitati as $entitate)
     <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2">
         {{$entitate->nume}} <!-- {{$entitate->id}}  -->
@@ -23,11 +25,11 @@
         <tr>
             <td width='25%'>{{$user->username}}</td>
             <td>
-                <button  class='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="alegeUser('{{$user->id}}')">Sterge</button>
+                <button class='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="alegeUser('{{$user->id}}')">Sterge</button>
 
             </td>
             <td>
-                <button  class="btn btn-primary trimite_email">
+                <button class="btn btn-primary trimite_email">
                     Editeaza</button>
             </td>
             <td>

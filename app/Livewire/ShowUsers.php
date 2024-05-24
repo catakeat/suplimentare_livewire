@@ -13,11 +13,14 @@ class ShowUsers extends Component
     public $username;
     public $entitate;
     public $type;
+    public $test;
+    
+   
 
     public function alegeUser($id)
     {
         $this->id =  $id;
-      }
+    }
       
     public function stergeUser(){
      
