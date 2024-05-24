@@ -34,7 +34,7 @@
                     Editeaza</button>
             </td>
             <td>
-                <a class="btn btn-primary trimite_email" data-bs-toggle="modal" data-bs-target="#convoacaModal">
+                <a class="btn btn-primary trimite_email" data-bs-toggle="modal" data-bs-target="#convoacaModal" wire:click.prevent="alegeUser('{{$user->id}}')">
                     Convoaca</a>
             </td>
             @endforeach

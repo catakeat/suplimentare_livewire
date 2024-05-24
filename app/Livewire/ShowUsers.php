@@ -14,7 +14,7 @@ class ShowUsers extends Component
     public $entitate;
     public $type;
 
-    public function alegeUser($id)
+    public function alegeUser()
     {
        // dd($id);
        // $this->id =  $id;
