@@ -17,8 +17,8 @@ Route::redirect('/','echipa');
 
 Route::get('calendar', [App\Http\Controllers\CalendarController::class,'index'])->name('calendar');
 Route::view('calendar-show','pages.calendarshow')->name('calendar-show');
-Route::get('echipa',[App\Http\Controllers\EchipaController::class,'showEntitati'])->name('echipa');
-Route::get('show-users',App\Livewire\ShowUsers::class);
+//Route::get('echipa',[App\Http\Controllers\EchipaController::class,'showEntitati'])->name('echipa');
+Route::get('show-users',App\Livewire\ShowUsers::class)->name("show-users");
 Route::get('pe_zile',[App\Http\Controllers\PeZileController::class,'index'])->name('pe_zile');
 Route::get('mesaje-primite',[App\Http\Controllers\MesajeController::class,'primite'])->name('mesaje-primite');
 Route::get('mesaje-trimise',[App\Http\Controllers\MesajeController::class,'trimise'])->name('mesaje-trimise');

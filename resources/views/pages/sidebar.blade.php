@@ -10,7 +10,7 @@
                     </ul>
                 </li>
           
-                <li class='sub-menu'><a href="{{ route('echipa')}}">Echipa</a>
+                <li class='sub-menu'><a href="{{ route('show-users')}}">Echipa</a>
 
             </li>
           

@@ -23,14 +23,11 @@
         <tr>
             <td width='25%'>{{$user->username}}</td>
             <td>
-                <button class='btn btn-primay' data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="alegeUser('{{$user->id}}')">Sterge</button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Launch demo modal
-                </button>
+                <button  class='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="alegeUser('{{$user->id}}')">Sterge</button>
 
             </td>
             <td>
-                <button type="button" id="" class="btn btn-primary trimite_email">
+                <button  class="btn btn-primary trimite_email">
                     Editeaza</button>
             </td>
             <td>
