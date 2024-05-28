@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserLogin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/','echipa');
+Route::redirect('/','login');
 
 Route::get('calendar', [App\Http\Controllers\CalendarController::class,'index'])->name('calendar');
 Route::view('calendar-show','pages.calendarshow')->name('calendar-show');
@@ -24,3 +24,7 @@ Route::get('mesaje-primite',[App\Http\Controllers\MesajeController::class,'primi
 Route::get('mesaje-trimise',[App\Http\Controllers\MesajeController::class,'trimise'])->name('mesaje-trimise');
 Route::get('/convocator/{id}',[App\Http\Controllers\ConvocatorController::class,'convoaca'])->name('convocator');
 Route::get('logout',[App\Http\Controllers\LogoutController::class,'userLogout'])->name('logout');
+Route::post("login",[UserLogin::class,'ADLogin'])->name('add_login');
+Route::get("login", function(){
+  return view('pages.login');
+})->name('login');

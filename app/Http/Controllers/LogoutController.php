@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class LogoutController extends Controller
 {
     public function userLogout(){
-        return view('logout.blade');
+        //dd(session());
+        return view('pages.logout');
     }
 }

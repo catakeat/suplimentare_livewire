@@ -3,6 +3,7 @@
 
     <input type="password" wire:model.live.150ms="test"> ai scris asta {{$test}}
 
+  {{session()->get("user")}}
     @foreach($entitati as $entitate)
     <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2">
         {{$entitate->nume}} <!-- {{$entitate->id}}  -->

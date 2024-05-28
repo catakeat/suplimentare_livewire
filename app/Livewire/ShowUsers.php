@@ -5,6 +5,9 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Entitati;
 use App\Models\User;
+use App\Models\Messages;
+use Illuminate\Support\Facades\Auth; // Ensure this is imported
+
 
 class ShowUsers extends Component
 {
@@ -14,16 +17,24 @@ class ShowUsers extends Component
     public $entitate;
     public $type;
     public $test;
-    
-   
+
+
+    public function  convoacaUser()
+    {
+        //dd($this->id);
+    $message = new Messages();
+    $message->sender= Auth::user()->id;
+    dd(Auth::user()->id);
+    }
 
     public function alegeUser($id)
     {
         $this->id =  $id;
     }
-      
-    public function stergeUser(){
-     
+
+    public function stergeUser()
+    {
+
         User::find($this->id)->delete();
     }
 

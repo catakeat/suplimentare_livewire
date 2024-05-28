@@ -32,7 +32,7 @@
       </div>
       <div class="modal-body">
 
-        <form action="#" method="POST" id="convoacaForm">
+        <form action="#" method="POST" id="convoacaForm"  >
           @csrf
           <input type="hidden" name="id_user_convocat" id="id_user_convocat">
           <label for="appt">Ora de inceput:(hh:mm/AM/PM)</label>
@@ -49,14 +49,14 @@
 
 
 
-          <button class="form-control" data-bs-dismiss="modal" id="convoacaUserCloseButton" disabled>Trimite</button>
+          <button class="form-control" data-bs-dismiss="modal" id="convoacaUserCloseButton" wire:click="convoacaUser">Trimite</button>
         </form>
 
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       
       </div>
     </div>
   </div>
