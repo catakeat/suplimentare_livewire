@@ -10,6 +10,7 @@
     <br>
     @endif
     <br>
+    
     @if(session()->has("success"))
     <span class="alert text-danger">{{session()->get("success")}}</span>
     @endif
@@ -79,6 +80,21 @@
             <strong>Whoops!</strong> Slot comp anonima2
     </x-anonima2>
 
+    @section('scripts')
+    <script>
+        document.addEventListener('livewire:load', function() {
+            Livewire.on('close-modal', function() {
+                var myModal = new bootstrap.Modal(document.getElementById('convoacaModal'));
+                myModal.hide();
+            });
+        });
+
+
+        window.addEventListener("close-modal", function() {
+            $("#convoacaModal").modal('hide');
+        })
+    </script>
+    @endsection('scripts')
 
     {{-- @livewire('convoaca-form')  --}}
     {{-- <livewire:convoaca-form />  --}}
