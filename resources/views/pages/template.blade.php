@@ -19,5 +19,6 @@
         </div>
     </div>
 </div>
+@yield('scripts')
 </body>
 @include('pages.footer')

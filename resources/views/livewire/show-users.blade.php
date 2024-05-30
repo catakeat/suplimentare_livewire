@@ -1,9 +1,21 @@
 <div class="col col-lg-7">
     @include('pages.modale')
 
-    <input type="password" wire:model.live.150ms="test"> ai scris asta {{$test}}
 
+    @if(session()->has("user"))
     {{session()->get("user")}}
+    @else
+    <br>
+    {{"nu esti logat"}}
+    <br>
+    @endif
+    <br>
+    @if(session()->has("success"))
+    <span class="alert text-danger">{{session()->get("success")}}</span>
+    @endif
+
+
+
     @foreach($entitati as $entitate)
     <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2">
         {{$entitate->nume}} <!-- {{$entitate->id}}  -->
@@ -26,7 +38,7 @@
         <tr>
             <td width='25%'>{{$user->username}}</td>
             <td>
-                <button class='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal" wire:click="alegeUser('{{$user->id}}')">Sterge</button>
+                <button class='btn btn-primary' data-bs-toggle="modal" data-bs-target="#stergeModal" wire:click="alegeUser('{{$user->id}}')">Sterge</button>
 
             </td>
             <td>
@@ -34,8 +46,12 @@
                     Editeaza</button>
             </td>
             <td>
-                <a class="btn btn-primary trimite_email" data-bs-toggle="modal" data-bs-target="#convoacaModal" wire:click.prevent="alegeUser('{{$user->id}}')">
-                    Convoaca</a>
+                {{-- <livewire:convoaca-form wire:key="id{{ $user->id}}" :destinatar="{{$user->id}}" /> --}}
+                @livewire('convoaca-form', ['destinatar' => $user->id])
+
+                {{-- <x-alert :destinatar="$user->id" wire:key="id{{ $user->id}}" /> --}}<!-- deci componenta asta care nue livewire merge ,
+                 dar modalul se inchide cind apesi butonul nu se vede validarea dar ea exista-->
+
             </td>
             @endforeach
     </table>
@@ -44,6 +60,26 @@
     @endforeach
 
     <!-- wire:click = 'alegeUser({{$user->id}})  '-->
-    <x-anonima />
-    @livewire('convoaca-form')
+
+
+
+
+    <x-anonima>
+        <x:slot:title>Titlu comp anonima</x:slot:title>
+        Slot componenta anonima
+    </x-anonima>
+
+    <br>
+
+    <x-anonima2>
+        <x-slot:title>
+            Titlu comp anonima2
+            </x-slot>
+
+            <strong>Whoops!</strong> Slot comp anonima2
+    </x-anonima2>
+
+
+    {{-- @livewire('convoaca-form')  --}}
+    {{-- <livewire:convoaca-form />  --}}
 </div>

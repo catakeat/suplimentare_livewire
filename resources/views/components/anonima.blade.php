@@ -1,1 +1,2 @@
-componenta anonima 
+<span>{{$title}}</span>
+<span>{{$slot}}</span> 

@@ -13,7 +13,9 @@ use  Illuminate\Support\Facades\DB;
 class Messages extends Model
 {
   use HasFactory;
-  
+  protected  $guarded=[];
+  public $timestamps = false;
+
   protected $table = "messages";
   //nefolosit
   public function getSenderById($id)

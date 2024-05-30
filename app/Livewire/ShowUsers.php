@@ -24,7 +24,7 @@ class ShowUsers extends Component
         //dd($this->id);
     $message = new Messages();
     $message->sender= Auth::user()->id;
-    dd(Auth::user()->id);
+  //  dd(Auth::user()->id);
     }
 
     public function alegeUser($id)
