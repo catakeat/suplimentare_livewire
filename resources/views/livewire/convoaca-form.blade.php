@@ -1,4 +1,4 @@
-<div>
+<div  wire:key="id{{$destinatar}}">
 <div>
     <!-- convoaca modal -->
     <a class="btn btn-primary trimite_email" data-bs-toggle="modal" data-bs-target="#convoacaModal" wire:click="alegeUser({{$destinatar}})">

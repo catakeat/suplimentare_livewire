@@ -28,7 +28,7 @@ class ConvoacaForm extends Component
     }
     public function alegeUser($id_destinatar)
     {
-       // dd($id_destinatar);
+       dd($id_destinatar);
         $this->resetFields();
         $this->destinatar = $id_destinatar;
         // dd($this->destinatar);

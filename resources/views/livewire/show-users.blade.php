@@ -10,9 +10,11 @@
     <br>
     @endif
     <br>
-    
+
     @if(session()->has("success"))
     <span class="alert text-danger">{{session()->get("success")}}</span>
+    @else
+    <span class="alert text-danger">nui suceess</span>
     @endif
 
 
