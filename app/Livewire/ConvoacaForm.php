@@ -24,28 +24,23 @@ class ConvoacaForm extends Component
         $this->ora = "";
         $this->data = "";
         $this->mesaj = "";
-        $this->destinatar = "";
+       
     }
-    public function alegeUser($id_destinatar)
-    {
-       dd($id_destinatar);
-        $this->resetFields();
-        $this->destinatar = $id_destinatar;
-        // dd($this->destinatar);
-    }
-
+   
     public function render()
     {
         return view('livewire.convoaca-form');
     }
-    /*
+
     public function mount($destinatar = null)
-    {
+    { 
+        $this->resetFields();
         $this->destinatar = $destinatar;
     }
-*/
+
     public function convoacaUser()
     {
+        dd($this->destinatar);
         $data = $this->validate();
 
 
@@ -61,5 +56,6 @@ class ConvoacaForm extends Component
         session()->flash("success", "Am adaugat o convocare");
 
         $this->dispatch('close-modal');
+        //$this->resetFields();
     }
 }

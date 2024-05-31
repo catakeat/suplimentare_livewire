@@ -12,9 +12,11 @@
     <br>
 
     @if(session()->has("success"))
-    <span class="alert text-danger">{{session()->get("success")}}</span>
+    <div class="alert alert-success">{{session()->get("success")}}</div>
     @else
-    <span class="alert text-danger">nui suceess</span>
+    <p class="text-success">
+    <div class="alert alert-danger">nui suceess</div>
+    </p>
     @endif
 
 
@@ -45,12 +47,20 @@
 
             </td>
             <td>
-                <button class="btn btn-primary trimite_email">
+                <button class="btn btn-primary trimite_email" data-bs-toggle="modal" data-bs-target="#editeazaModal" wire:click="editeazaUser('{{$user->id}}')">
                     Editeaza</button>
             </td>
             <td>
-                {{-- <livewire:convoaca-form wire:key="id{{ $user->id}}" :destinatar="{{$user->id}}" /> --}}
-                @livewire('convoaca-form', ['destinatar' => $user->id])
+
+
+                <!-- convoaca modal -->
+                <a class="btn btn-primary trimite_email" data-bs-toggle="modal" data-bs-target="#convoacaModal" wire:click="alegeDestinatar({{$user->id}})">
+                    Convoaca </a>
+                {{--wire:click="alegeUser({{$destinatar}}) wire:click="resetFields"--}}
+
+
+                {{--<livewire:convoaca-form wire:key="convoacaform-{{ $user->id}}" :destinatar="$user->id" />
+                @livewire('convoaca-form', ['destinatar' => $user->id]) --}}
 
                 {{-- <x-alert :destinatar="$user->id" wire:key="id{{ $user->id}}" /> --}}<!-- deci componenta asta care nue livewire merge ,
                  dar modalul se inchide cind apesi butonul nu se vede validarea dar ea exista-->
@@ -84,16 +94,13 @@
 
     @section('scripts')
     <script>
-        document.addEventListener('livewire:load', function() {
-            Livewire.on('close-modal', function() {
-                var myModal = new bootstrap.Modal(document.getElementById('convoacaModal'));
-                myModal.hide();
-            });
-        });
+       
 
 
         window.addEventListener("close-modal", function() {
             $("#convoacaModal").modal('hide');
+            $("#adaugaUser").modal('hide');
+            $("#editeazaModal").modal('hide');
         })
     </script>
     @endsection('scripts')
