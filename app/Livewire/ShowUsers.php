@@ -24,12 +24,7 @@ class ShowUsers extends Component
     public $mesaj;
 
     public $destinatar;
-    /*
-    protected $rules = [
-        'username' => 'required|string|unique:users,username',
-        'entitate' => 'required|exists:entitati,id',
-    ];
-*/
+   
     public function adaugaUser()
     {
 
@@ -46,7 +41,7 @@ class ShowUsers extends Component
                 'entitate.exists' => 'Selected entitate does not exist.',
             ]
         );
-        // dd($data);
+   
         $user = new User();
         $user->username =  $this->username;
         $user->entitate = $this->entitate;
@@ -67,15 +62,7 @@ class ShowUsers extends Component
         $this->data = "";
         $this->mesaj = "";
     }
-    /*
-    public function  convoacaUser()
-    {
-        //dd($this->id);
-        $message = new Messages();
-        $message->sender = Auth::user()->id;
-        //  dd(Auth::user()->id);
-    }
-*/
+   
     public function convoacaUser()
     {
 
@@ -106,7 +93,6 @@ class ShowUsers extends Component
         $this->resetUserData();
         $this->id = $id;
 
-        // dd($this->id);
     }
     public function alegeDestinatar($id)
     {
