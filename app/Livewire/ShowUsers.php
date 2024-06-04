@@ -50,12 +50,14 @@ class ShowUsers extends Component
         $this->dispatch("close-modal");
         $this->resetUserData();
     }
+
     public function resetUserData()
     {
         $this->id = "";
         $this->username = "";
         $this->entitate = "";
     }
+
     public function resetConvocareFields()
     {
         $this->ora = "";
@@ -94,6 +96,7 @@ class ShowUsers extends Component
         $this->id = $id;
 
     }
+
     public function alegeDestinatar($id)
     {
         $this->resetConvocareFields();
@@ -107,6 +110,7 @@ class ShowUsers extends Component
         $this->username = $user->username;
         $this->entitate = $user->entitate;
     }
+    
     public function modificaUser()
     {
         $user  = User::find($this->id);

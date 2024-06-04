@@ -1,5 +1,14 @@
 @extends('pages.template')
 
+@if(session()->has("user"))
+{{  session()->get("user") }}
+@endif
+@if(Auth::check())
+Logat ca si  {{ Auth::id()  }}
+@else
+nelogat
+@endif
+
 @section('content')
 <h2>Mesaje</h2>
 <table id="mesaje" style="width:100%"  class="table table-bordered table-striped table-hover">
@@ -12,5 +21,5 @@
 </tr>
 @endforeach
 </table>
-{{$mesaje->links()}}
+{{ $mesaje->links()  }}
 @endsection

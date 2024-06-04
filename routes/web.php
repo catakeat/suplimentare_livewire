@@ -15,6 +15,7 @@ use App\Http\Controllers\UserLogin;
 
 Route::redirect('/','login');
 
+Route::middleware('auth')->group(function(){
 Route::get('calendar', [App\Http\Controllers\CalendarController::class,'index'])->name('calendar');
 Route::view('calendar-show','pages.calendarshow')->name('calendar-show');
 //Route::get('echipa',[App\Http\Controllers\EchipaController::class,'showEntitati'])->name('echipa');
@@ -23,7 +24,9 @@ Route::get('pe_zile',[App\Http\Controllers\PeZileController::class,'index'])->na
 Route::get('mesaje-primite',[App\Http\Controllers\MesajeController::class,'primite'])->name('mesaje-primite');
 Route::get('mesaje-trimise',[App\Http\Controllers\MesajeController::class,'trimise'])->name('mesaje-trimise');
 Route::post('/adaugaconvocare',[App\Http\Controllers\ConvocatorController::class,'adaugaConvocare'])->name('adaugaconvocare');
-Route::get('logout',[App\Http\Controllers\LogoutController::class,'userLogout'])->name('logout');
+ 
+});
+Route::get('logout', [App\Http\Controllers\LogoutController::class, 'userLogout'])->name('logout');
 Route::post("login",[UserLogin::class,'ADLogin'])->name('add_login');
 Route::get("login", function(){
   return view('pages.login');

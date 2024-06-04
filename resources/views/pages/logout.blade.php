@@ -5,4 +5,3 @@
 
 @endsection('content')
 
-<x-anonima/>

@@ -58,7 +58,7 @@ class UserLogin extends Controller
         } else {
 
             Auth::loginUsingId($user->id);  //  se poate si Auth::login($user) sau cu guard Auth::guard("admin")->login($user)
-
+          
             // Check if the authentication was successful
             if (Auth::check()) {
                 // Authentication successful, return success response
