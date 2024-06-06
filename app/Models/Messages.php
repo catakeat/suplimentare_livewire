@@ -18,6 +18,7 @@ class Messages extends Model
 
   protected $table = "messages";
   //nefolosit
+  /*
   public function getSenderById($id)
   {
     $query = "select username from users where id=$id";
@@ -30,7 +31,7 @@ class Messages extends Model
   {
       return $this->belongsTo(User::class, 'sender', 'id');
   }
-
+*/
   
 /*
   public function destinatar():HasOne

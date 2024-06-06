@@ -30,7 +30,7 @@ class MesajeController extends Controller
         return view('pages.mesaje', compact('mesaje'));
     }
     public function trimise()
-    {   //  other idea chatGPT ?  how to do it ?
+    {   
         $mesaje = Messages::where('sender', $this->user_id)->paginate(10);
         return view('pages.mesaje', compact('mesaje'));
     }

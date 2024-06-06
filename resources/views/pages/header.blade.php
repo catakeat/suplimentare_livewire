@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{  asset('css/menu.css') }}">
     <link rel="stylesheet" href="{{asset('css/main.css') }} ">
     <link rel="stylesheet" href="{{asset('css/calendar_nou.css')}}">
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    @yield('custom-css')
     @livewireStyles
 </head>
 

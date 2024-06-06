@@ -62,13 +62,14 @@
                 {{--<livewire:convoaca-form wire:key="convoacaform-{{ $user->id}}" :destinatar="$user->id" />
                 @livewire('convoaca-form', ['destinatar' => $user->id]) --}}
 
-                {{-- <x-alert :destinatar="$user->id" wire:key="id{{ $user->id}}" /> --}}<!-- deci componenta asta care nue livewire merge ,
+                {{-- <x-alert :destinatar="$user->id" wire:key="id{{ $user->id}}" /> --}}
+                <!-- deci componenta asta care nue livewire merge ,
                  dar modalul se inchide cind apesi butonul nu se vede validarea dar ea exista-->
 
             </td>
             @endforeach
     </table>
-    <!-- {{$entitate->users()->paginate(3)->links()}}  -->
+    {{-- {{$entitate->users()->paginate(3)->links()}}  --}}
 
     @endforeach
 
@@ -94,9 +95,6 @@
 
     @section('scripts')
     <script>
-       
-
-
         window.addEventListener("close-modal", function() {
             $("#convoacaModal").modal('hide');
             $("#adaugaUser").modal('hide');
