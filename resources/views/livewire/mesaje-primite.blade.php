@@ -44,6 +44,8 @@
             @endforeach
         </tbody>
     </table>
-    {{ $mesaje->links() }}
+    
+        {{ $mesaje->links('pagination::tailwind') }}
+
     @endsection
 </div>

@@ -11,7 +11,7 @@ class MesajePrimite extends Component
 {
     use WithPagination;
 
-    protected $paginationTheme="bootstrap";
+   // protected $paginationTheme="bootstrap";
 
    // public $mesaje;
 
