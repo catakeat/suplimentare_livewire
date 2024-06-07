@@ -10,6 +10,11 @@
     @endif
 
     @section('content')
+    <?php
+    // print_r($mesaje[0]); 
+    ?>
+
+
     <h2>Mesaje</h2>
     <table id="mesaje" style="width:100%" class="table table-bordered table-striped table-hover">
         <thead>
@@ -24,7 +29,7 @@
         <tbody>
 
             @foreach($mesaje as $msg)
-            <tr>
+            <tr wire:key='id-{{$msg->id}}'>
                 <td>
                     {{ optional($msg->destinatarUser)->username ?? 'User no longer exist' }} <br>
                 </td>
@@ -34,9 +39,11 @@
                 <td> {{$msg->approval}}</td>
                 <td>arhiveaza</td>
                 <td>{{$msg->mesaj}}</td>
+
             </tr>
             @endforeach
+        </tbody>
     </table>
-    {{ $mesaje->links()  }}
+    {{ $mesaje->links() }}
     @endsection
 </div>

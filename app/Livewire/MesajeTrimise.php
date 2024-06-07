@@ -11,7 +11,8 @@ class MesajeTrimise extends Component
 {
     use WithPagination;
 
-     protected $paginationTheme = 'bootstrap';
+
+    // protected $paginationTheme = 'bootstrap';
     // public $page;
     // public $mesaje;
 
