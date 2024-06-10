@@ -19,7 +19,7 @@
     </p>
     @endif
 
-
+<input type="text"  wire:model.live="test"  placeholder="test">{{$test}}
 
     @foreach($entitati as $entitate)
     <small class="d-inline-flex mb-3 px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2">

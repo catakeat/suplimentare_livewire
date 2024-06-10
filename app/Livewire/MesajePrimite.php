@@ -11,20 +11,18 @@ class MesajePrimite extends Component
 {
     use WithPagination;
 
+    public $search;
    // protected $paginationTheme="bootstrap";
 
    // public $mesaje;
 
-  public  function gotoPage($v,$v1){
-
-      dd($v1);
-  }
+  
 
     public function render()
     {
         $id = Auth::id();
 
-        $mesaje = Messages::where("destinatar", $id)->paginate(2);
+        $mesaje = Messages::where("destinatar", $id)->paginate(10);
 
         return view('livewire.mesaje-primite', ["mesaje" =>$mesaje])->extends("pages.template")->section('content');;
     }

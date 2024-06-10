@@ -1,11 +1,14 @@
 <div>
-    @section('content')
+
     <h2>Mesaje</h2>
- {{--   <pre>@this.page</pre>
+    <pre>@this.page</pre>
     <br>
 
     <pre>@entangle('events')</pre>
---}}
+
+    <input type="text" wire:model.live="search" placeholder="Search term here" class="form-group"> <BUTTON>AICI</BUTTON>
+
+
     <table id="mesaje" style="width:100%" class="table table-bordered table-striped table-hover">
         <thead>
             <th>Destinatar</th>
@@ -34,6 +37,7 @@
         </tbody>
     </table>
 
-    {{  $mesaje->links()  }}
-    @endsection
+    {{ $mesaje->links('pagination::tailwind')  }}
+
+
 </div>
