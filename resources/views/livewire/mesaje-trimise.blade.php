@@ -1,12 +1,11 @@
+
 <div>
+    <?php
+    print_r(Session::all());
+    ?>
 
-    <h2>Mesaje</h2>
-    <pre>@this.page</pre>
-    <br>
-
-    <pre>@entangle('events')</pre>
-
-    <input type="text" wire:model.live="search" placeholder="Search term here" class="form-group"> <BUTTON>AICI</BUTTON>
+    <input type="search" id="search" placeholder="Search term here" class="form-group" value="">
+    <button type="button" wire:click="submitSearch(document.getElementById('search').value);console.log(document.getElementById('search').value)">Search</button> 
 
 
     <table id="mesaje" style="width:100%" class="table table-bordered table-striped table-hover">
@@ -36,8 +35,5 @@
             @endforeach
         </tbody>
     </table>
-
     {{ $mesaje->links('pagination::tailwind')  }}
-
-
 </div>

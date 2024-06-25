@@ -26,9 +26,12 @@ Route::get('pe_zile',[App\Http\Controllers\PeZileController::class,'index'])->na
 //Route::get('mesaje-primite',[App\Http\Controllers\MesajeController::class,'primite'])->name('mesaje-primite');
 //Route::get('mesaje-trimise',[App\Http\Controllers\MesajeController::class,'trimise'])->name('mesaje-trimise');
 Route::post('/adaugaconvocare',[App\Http\Controllers\ConvocatorController::class,'adaugaConvocare'])->name('adaugaconvocare');
-Route::get("mesaje-primite", App\Livewire\MesajePrimite::class)->name("mesaje-primite");
-Route::get("mesaje-trimise", App\Livewire\MesajeTrimise::class)->name("mesaje-trimise");
+/*Route::get("mesaje-primite", App\Livewire\MesajePrimite::class)->name("mesaje-primite");*/
+Route::get("mesaje-trimise1", App\Livewire\MesajeTrimise::class)->name("mesaje-trimise1");
 
+Route::get('mesaje-trimise',[App\Http\Controllers\MesajeController::class,'trimise'])->name('mesaje-trimise');
+Route::get('mesaje-primite',[App\Http\Controllers\MesajeController::class,'primite'])->name('mesaje-primite');
+Route::get("datatables",[App\Http\Controllers\MesajeController::class,'dataTables'])->name('datatables');
 });
 Route::get('logout', [App\Http\Controllers\LogoutController::class, 'userLogout'])->name('logout');
 Route::post("login",[UserLogin::class,'ADLogin'])->name('add_login');

@@ -27,11 +27,19 @@ class MesajeController extends Controller
     {
 
         $mesaje =  Messages::where('destinatar', $this->user_id)->paginate(10);
-        return view('pages.mesaje', compact('mesaje'));
+       return view('pages.mesaje', compact('mesaje'));
+      
     }
+
+   public function dataTables(){
+        $mesaje =  Messages::where('sender', $this->user_id)->get();
+        return view('pages.datatables', compact('mesaje'));
+   }
+
     public function trimise()
     {   
         $mesaje = Messages::where('sender', $this->user_id)->paginate(10);
         return view('pages.mesaje', compact('mesaje'));
+        
     }
 }
